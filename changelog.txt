@@ -1,0 +1,14 @@
+---------------------------------------------------------------------------------------------------
+Version: 0.1.1
+Date: 2023.09.30
+  Info:
+    - Modify menu simulations from base game.
+    - Replace aircrafts mod with Lex's airships mod.
+    - Fix bug where the inventory of item teleporters wasn't adjusted properly.
+    - Optionally support Production Scrap 2
+
+---------------------------------------------------------------------------------------------------
+Version: 0.1.0
+Date: 2023.09.30
+  Info:
+    - Initial Release
