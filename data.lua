@@ -58,6 +58,8 @@ end
 
 local coverage = { ["rock-big"] = 0.07, ["rock-huge"] = 0.04, ["sand-rock-big"] = 0.1 }
 local max_probability = { ["rock-big"] = 0.2, ["rock-huge"] = 0.2, ["sand-rock-big"] = 0.1 }
+
+alien_biomes = alien_biomes or nil
 if not alien_biomes then
     local sand_tiles = { "sand-1", "sand-2", "sand-3", "red-desert-0", "red-desert-1", "red-desert-2", "red-desert-3" }
     local not_sand_tiles = {}

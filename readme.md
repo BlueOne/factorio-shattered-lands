@@ -16,8 +16,10 @@ Some movement options are provided via other mods which are installed automatica
 
 * __Jump and Swing__ - My reworked grappling hook and jump mod. This is the main way of moving the character around the map.
 * __Spidertron Patrols__ - Allows automating resource movement via spidertrons. Main method of getting resources through difficult terrain, but only for short segments or low throughput. Makes a small spidertron variant available at blue science.
-* __Lex's Airships__ - Airships that are controlled the same as spidertrons and hence can be automated. Useful for transporting resources over ravines, but need to be fueled via logistic bots.
+* __Lex's Aircraft__ - Aircrafts that are controlled like spidertrons and hence can be automated. Useful for transporting resources over ravines, but need to be fueled via logistic bots.
 * __Bulk Teleportation__ - Allows teleportation of resources at a steep electricity cost. Strongly nerfed compared to the original version and only available very late. It costs around 10MW to connect a yellow belt. Basically the replacement for trains in the late game.
+
+![Short Demo](https://raw.githubusercontent.com/BlueOne/factorio-shattered-lands/main/.web/shattered-lands-transportation.mp4)
 
 Hand-Picked Map Seeds
 -----------------------
@@ -29,13 +31,25 @@ Compatibility / Optional Mods
 
 __Airplane Mods:__ The mod comes with Lex's airships mod for logistics, for personal transportation you are intended to use the grappling hook or the airplanes. Aircraft Realism is not suggested; you get stuck when you land on the abyss.
 
-__Map Generation Mods__. Compatible with alien biomes. Possibly not compatible with other mods that change map generation.
+__Map Generation Mods:__ Compatible with alien biomes (but you don't really need it, the terrain already looks different from the base game). Possibly not compatible with other mods that change map generation.
 
-__Recipe Mods / Overhaul Mods.__ In theory compatible with many overhauls, but I recommend a short game length. Recommendations
+__Character mods:__ Since this mod relies on my grappling hook mod, it is incompatible with number of mods that influence the character, in particular the jetpack mod is incompatible at the moment.
+
+__Recipe Mods / Overhaul Mods:__ In theory compatible with many overhauls, but I recommend a short game length. Recommendations
 
 * Production Scrap 2 (install Production Scrap 2 Icon Fix by nIronwolf).
 * K2
 * AAI industry
+
+__Mining Mods:__ When a patch is directly next to abyss, you can sometimes not mine the entire patch with normal mining drills. With Pepperming Mining you can make bots do the job. Of course you can also use a large-area drill mod.
+
+Acknowledgments
+------------
+
+Thanks to:
+
+* Sparkletron, whose terraforming mod is the basis for this mod.
+* The authors of the transportation mods this one depends on: Xorimuth - Spidertron Patrols, Lex - Lex's Aircraft, dorfl - Bulk Teleporters
 
 For Mod Devs
 ------------
