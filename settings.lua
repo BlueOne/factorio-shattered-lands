@@ -1,14 +1,8 @@
 data:extend({
     {
         type = "bool-setting",
-        name = "jump-and-swing_autojump",
-        setting_type = "runtime-per-user",
+        name = "shattered-lands_adjustments",
+        setting_type = "startup",
         default_value = true
-    }, 
-    {
-        type = "bool-setting",
-        name = "jump-and-swing_collide-with-environment",
-        setting_type = "runtime-global",
-        default_value = true
-    }
+    },
 })

@@ -121,7 +121,6 @@ data:extend({
         name = "abyss",
         order = "z-a",
         category = "terrain",
-        richness = true,
     },
     {
         type = "noise-expression",
@@ -133,7 +132,18 @@ data:extend({
         name = "control-setting:abyss:bias",
         expression = tne(0)
     },
-
+    {
+        type = "autoplace-control",
+        name = "abyss-bridges",
+        order = "z-b",
+        category = "terrain",
+    },
+    {
+        type = "autoplace-control",
+        name = "abyss-crumbled-bridges",
+        order = "z-b",
+        category = "terrain",
+    },
 })
 
 -- Noise Expression
@@ -209,7 +219,7 @@ local menu_simulations = data.raw["utility-constants"]["default"].main_menu_simu
 
 local function edit_simulation(name, script_name)
     if menu_simulations[name] then
-        menu_simulations[name].save = "__shattered-lands__/menu-simulations/menu-simulation-" ..
+        menu_simulations[name].save = "__shattered-lands-terrain__/menu-simulations/menu-simulation-" ..
         script_name .. "-edited.zip"
     end
 end
@@ -234,6 +244,8 @@ end
 
 -- Integration of other mods
 ------------------------------------------------------------------------
+
+if not settings.startup["shattered-lands_adjustments"].value then return end
 
 -- Hovercraft
 local hovercraft_tech = data.raw.technology["hcraft-tech"]
@@ -279,8 +291,15 @@ if bulk_tele_tech then
             { name = "chemical-science-pack", amount = 1 },
             { name = "utility-science-pack",  amount = 1 },
             { name = "production-science-pack", amount = 1 },
+            { name = "space-science-pack", amount = 1 }
         },
         time = 30
+    }
+    bulk_tele_tech.prerequisites = {
+        "space-science-pack",
+        "circuit-network",
+        "logistic-system",
+        "effectivity-module-3",
     }
     local bulk_tele_tech2 = data.raw.technology["bulkteleport-tech2"]
     bulk_tele_tech2.enabled = false
@@ -294,6 +313,39 @@ if bulk_tele_tech then
     bulk_teleporter_energizer_send.energy_usage = "60MW" -- should use 10MW per belt
     local bulk_teleporter_energizer_receive = data.raw.furnace["bulkteleport-energizer-recv1"]
     bulk_teleporter_energizer_receive.energy_usage = "60MW"
+
+    data.raw.recipe["bulkteleport-send1"].ingredients = {
+        { name = "steel-plate", amount = 50 },
+        { name = "concrete", amount = 300 },
+        { name = "logistic-chest-passive-provider", amount = 10 },
+        { name = "accumulator", amount = 50 },
+        { name = "beacon", amount = 4 },
+        { name = "effectivity-module-3", amount = 1 },
+    }
+    data.raw.recipe["bulkteleport-recv1"].ingredients = {
+        { name = "steel-plate", amount = 200 },
+        { name = "concrete", amount = 100 },
+        { name = "logistic-chest-requester", amount = 10 },
+        { name = "accumulator", amount = 50 },
+        { name = "lab", amount = 5 },
+        { name = "effectivity-module-3", amount = 1 },
+    }
+    data.raw.recipe["bulkteleport-send3"].ingredients = {
+        { name = "steel-plate", amount = 50 },
+        { name = "concrete", amount = 300 },
+        { name = "storage-tank", amount = 10 },
+        { name = "accumulator", amount = 50 },
+        { name = "beacon", amount = 4 },
+        { name = "effectivity-module-3", amount = 1 },
+    }
+    data.raw.recipe["bulkteleport-recv3"].ingredients = {
+        { name = "steel-plate", amount = 200 },
+        { name = "concrete", amount = 100 },
+        { name = "storage-tank", amount = 10 },
+        { name = "accumulator", amount = 50 },
+        { name = "lab", amount = 5 },
+        { name = "effectivity-module-3", amount = 1 },
+    }
 end
 
 
